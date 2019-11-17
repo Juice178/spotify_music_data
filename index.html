@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<script src='js/d3plus.v2.0.0-alpha.22.full.min.js'></script>
+<script type="text/javascript" src="data/Billie_Eilish.json"></script>
+
+<body>
+</body>
+
+<script>
+var myData = 'data/Billie_Eilish.json'
+new d3plus.Pie()
+  .config({
+    data: myData,
+    groupBy: "song_name",
+    value: function(d) {
+      return d["popularity"];
+    }
+  })
+  .render();
+</script>
